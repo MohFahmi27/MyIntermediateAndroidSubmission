@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_app_icon.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/activity_auth.xml" value="0.176" />
       </map>
     </option>
   </component>
