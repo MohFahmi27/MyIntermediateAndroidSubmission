@@ -48,5 +48,6 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":features:auth"))
+    implementation(project(":features:home"))
     commonAndroidLibrary()
 }

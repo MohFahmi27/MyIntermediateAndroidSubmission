@@ -19,8 +19,29 @@
         <item name="android:navigationBarColor">@color/primaryColor</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
         <item name="statusBarForeground">@color/primaryTextColor</item>
-        <item name="android:windowActivityTransitions">true</item>
-        <item name="android:windowEnterTransition">@android:transition/explode</item>
-        <item name="android:windowExitTransition">@android:transition/explode</item>
+    </style>
+
+    <style name="primaryButtonStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="elevation">0dp</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="strokeColor">@color/primaryTextColor</item>
+        <item name="strokeWidth">@dimen/_1sdp</item>
+    </style>
+
+    <style name="PrimaryTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_50sdp</item>
+        <item name="android:layout_marginTop">@dimen/_4sdp</item>
+        <item name="boxBackgroundColor">@color/primaryColor</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusTopEnd">0dp</item>
+        <item name="boxCornerRadiusTopStart">0dp</item>
+        <item name="boxStrokeColor">@color/primaryTextColor</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+        <item name="expandedHintEnabled">false</item>
     </style>
 </resources>

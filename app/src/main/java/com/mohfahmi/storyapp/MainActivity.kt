@@ -1,6 +1,5 @@
 package com.mohfahmi.storyapp
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -26,9 +25,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun navigateToAuth() {
-        val intent = Intent(this@MainActivity, Class.forName(AUTH_ROUTE))
-        startActivity(intent,
-            ActivityOptions.makeSceneTransitionAnimation(this@MainActivity).toBundle())
-        this@MainActivity.finish()
+        startActivity(Intent(this, Class.forName(AUTH_ROUTE)))
+        this.finish()
     }
 }

@@ -7,7 +7,11 @@
         <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1715" />
         <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_app_icon.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/sh_cursor_edittext.xml" value="0.2395" />
         <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/activity_auth.xml" value="0.176" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/home/src/main/res/layout/activity_home.xml" value="0.1936725096194955" />
       </map>
     </option>
   </component>

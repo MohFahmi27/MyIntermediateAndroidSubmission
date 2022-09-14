@@ -17,3 +17,4 @@ rootProject.name = "StoryApp"
 include(":app")
 include(":features:auth")
 include(":core")
+include(":features:home")

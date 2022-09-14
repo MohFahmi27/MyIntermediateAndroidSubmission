@@ -33,7 +33,7 @@
             motion:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
             android:alpha="0"
             motion:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/textView" />
+            android:id="@+id/tv_login_title" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">
@@ -48,7 +48,7 @@
             android:id="@+id/appCompatImageView"
             android:alpha="1" />
         <Constraint
-            android:id="@+id/textView"
+            android:id="@+id/tv_login_title"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
