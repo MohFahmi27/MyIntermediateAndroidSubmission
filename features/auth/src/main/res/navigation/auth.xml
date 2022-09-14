@@ -14,10 +14,23 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
             app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loadingDialogFragment"
+            app:destination="@id/loadingDialogFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.mohfahmi.storyapp.auth.register.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loadingDialogFragment"
+            app:destination="@id/loadingDialogFragment"
+            app:popUpTo="@id/registerFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/loadingDialogFragment"
+        android:name="com.mohfahmi.storyapp.core.common_ui.LoadingDialogFragment"
+        android:label="LoadingDialogFragment" />
 </navigation>

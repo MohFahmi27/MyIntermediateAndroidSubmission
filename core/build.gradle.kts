@@ -20,6 +20,17 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro")
+            buildConfigField("String",
+                "BASE_URL",
+                project.properties["BASE_URL"] as String)
+        }
+        getByName("debug") {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro")
+            buildConfigField("String",
+                "BASE_URL",
+                project.properties["BASE_URL"] as String)
         }
     }
     buildFeatures {
@@ -36,4 +47,16 @@ android {
 
 dependencies {
     commonAndroidLibrary()
+    implementation(Dependencies.UiLibs.lottieAnimation)
+    implementation(Dependencies.Networking.retrofit2)
+    implementation(Dependencies.Networking.retrofitConverterMoshi)
+    implementation(Dependencies.Networking.moshi)
+    implementation(Dependencies.Networking.moshiKotlin)
+    implementation(Dependencies.Networking.okhttp3)
+    implementation(Dependencies.Networking.okhttp3Log)
+    implementation(Dependencies.DataStore.dataStoreCore)
+    implementation(Dependencies.DataStore.dataStorePreferences)
+    implementation(Dependencies.DataStore.dataStorePreferenceCore)
+    debugImplementation(Dependencies.Testing.chuckerDebug)
+    releaseImplementation(Dependencies.Testing.chuckerRelease)
 }
