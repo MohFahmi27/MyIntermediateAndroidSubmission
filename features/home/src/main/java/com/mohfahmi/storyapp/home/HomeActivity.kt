@@ -1,10 +1,15 @@
 package com.mohfahmi.storyapp.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohfahmi.storyapp.core.domain.models.Story
+import com.mohfahmi.storyapp.core.utils.NavigationHelper.DETAIL_EXTRA
+import com.mohfahmi.storyapp.core.utils.NavigationHelper.DETAIL_ROUTE
 import com.mohfahmi.storyapp.core.utils.Status
 import com.mohfahmi.storyapp.core.utils.UiState
 import com.mohfahmi.storyapp.core.utils.invisible
@@ -55,7 +60,21 @@ class HomeActivity : AppCompatActivity() {
                 Status.SUCCESS -> {
                     llLayoutError.invisible()
                     val adapter = response.data?.let {
-                        StoriesAdapter(it) {
+                        StoriesAdapter(it) { story, imgStory, name, description ->
+                            val intent = Intent(
+                                this@HomeActivity,
+                                Class.forName(DETAIL_ROUTE)
+                            )
+                            intent.putExtra(DETAIL_EXTRA, story)
+
+                            val optionsCompat: ActivityOptionsCompat =
+                                ActivityOptionsCompat.makeSceneTransitionAnimation(
+                                    this@HomeActivity,
+                                    Pair(imgStory, "image"),
+                                    Pair(name, "name"),
+                                    Pair(description, "description"),
+                                )
+                            startActivity(intent, optionsCompat.toBundle())
                         }
                     }
                     rvStory.setAdapter(adapter)

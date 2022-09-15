@@ -2,6 +2,7 @@ plugins {
     kotlin("android")
     id("com.android.library")
     id("androidx.navigation.safeargs")
+    id("kotlin-parcelize")
 }
 
 android {

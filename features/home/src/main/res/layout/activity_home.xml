@@ -52,7 +52,7 @@
                 app:veilFrame_highlightAlpha="1.0"
                 app:veilFrame_highlightColor="@color/secondaryColor"
                 app:veilFrame_layout="@layout/lyt_placeholder"
-                app:veilFrame_radius="0dp"
+                app:veilFrame_radius="@dimen/_8sdp"
                 app:veilFrame_shimmerEnable="true"
                 app:veilFrame_veiled="true" />
 

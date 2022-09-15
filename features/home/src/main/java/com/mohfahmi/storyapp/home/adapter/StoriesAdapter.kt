@@ -2,6 +2,8 @@ package com.mohfahmi.storyapp.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.mohfahmi.storyapp.core.R.drawable.img_error_image
@@ -11,7 +13,7 @@ import com.mohfahmi.storyapp.home.databinding.ItemsStoryBinding
 
 class StoriesAdapter(
     private val storyData: ArrayList<Story>,
-    private val clickListener: (Story) -> Unit
+    private val clickListener: (Story, ImageView, TextView, TextView) -> Unit
 ) :
     RecyclerView.Adapter<StoriesAdapter.StoriesAdapterViewHolder>() {
 
@@ -29,8 +31,9 @@ class StoriesAdapter(
                     placeholder(img_photo_loading)
                 }
 
+
                 root.setOnClickListener {
-                    clickListener(story)
+                    clickListener(story, imgStory, tvStoryName, tvStoryDescription)
                 }
             }
         }
