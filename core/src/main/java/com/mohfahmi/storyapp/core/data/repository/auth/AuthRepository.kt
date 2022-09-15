@@ -3,6 +3,7 @@ package com.mohfahmi.storyapp.core.data.repository.auth
 import com.mohfahmi.storyapp.core.data.source.local.DataStoreDataSource
 import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
 import com.mohfahmi.storyapp.core.domain.models.Login
+import com.mohfahmi.storyapp.core.domain.models.Register
 import com.mohfahmi.storyapp.core.utils.ApiResponse
 import kotlinx.coroutines.flow.Flow
 
@@ -22,4 +23,7 @@ class AuthRepository(
 
     override fun loginToApi(requestBody: HashMap<String, String>): Flow<ApiResponse<Login>> =
         remoteDataSource.login(requestBody)
+
+    override fun registerToApi(requestBody: HashMap<String, String>): Flow<ApiResponse<Register>> =
+        remoteDataSource.register(requestBody)
 }

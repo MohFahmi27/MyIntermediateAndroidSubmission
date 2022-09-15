@@ -115,6 +115,5 @@ object Dependencies {
         const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
         const val okhttp3Log =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
-        const val sandwich = "com.github.skydoves:sandwich:1.2.4"
     }
 }

@@ -11,6 +11,4 @@ sealed class ApiResponse<T>(
     data class Error<T>(
         val errorMessage: String
     ) : ApiResponse<T>(null, errorMessage)
-
-    data class Exception<T>(val errorMessage: String) : ApiResponse<T>(null, errorMessage)
 }

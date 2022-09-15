@@ -6,10 +6,11 @@ import android.view.View
 import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.mohfahmi.storyapp.auth.R
 import com.mohfahmi.storyapp.auth.databinding.FragmentLoginBinding
-import com.mohfahmi.storyapp.auth.login.LoginFragmentDirections.actionLoginFragmentToLoadingDialogFragment
-import com.mohfahmi.storyapp.auth.login.LoginFragmentDirections.actionLoginFragmentToRegisterFragment
+import com.mohfahmi.storyapp.auth.login.LoginFragmentDirections.Companion.actionLoginFragmentToLoadingDialogFragment
+import com.mohfahmi.storyapp.auth.login.LoginFragmentDirections.Companion.actionLoginFragmentToRegisterFragment
 import com.mohfahmi.storyapp.core.R.string.something_went_wrong
 import com.mohfahmi.storyapp.core.common_ui.ErrorBottomSheetDialogFragment
 import com.mohfahmi.storyapp.core.common_ui.ErrorBottomSheetDialogFragment.Companion.TAG
@@ -23,6 +24,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private val binding: FragmentLoginBinding by viewBinding()
     private val viewModel: LoginViewModel by viewModel()
+    private val args: LoginFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,6 +34,10 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun initViews() {
         with(binding) {
+            if (!args.email.isNullOrEmpty()) {
+                edLoginEmail.setText(args.email)
+                edLoginPassword.setText(args.password)
+            }
             btnLogin.setOnClickListener {
                 fetchLogin(edLoginEmail.text.toString(), edLoginPassword.text.toString())
             }

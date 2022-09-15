@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         app:cardCornerRadius="0dp"
+        app:cardBackgroundColor="@color/primaryColor"
         app:strokeColor="@color/primaryTextColor"
         app:strokeWidth="@dimen/_2sdp">
 

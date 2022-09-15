@@ -1,20 +1,16 @@
 package com.mohfahmi.storyapp.core.domain.use_cases
 
 import com.mohfahmi.storyapp.core.data.repository.auth.IAuthRepository
-import com.mohfahmi.storyapp.core.domain.models.Login
+import com.mohfahmi.storyapp.core.domain.models.Register
 import com.mohfahmi.storyapp.core.utils.ApiResponse
 import com.mohfahmi.storyapp.core.utils.UiState
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
 
-class LoginUseCase(private val authRepository: IAuthRepository) {
-    fun execute(
-        requestBody: HashMap<String, String>,
-    ): Flow<UiState<Login>> = flow {
-        authRepository.loginToApi(requestBody).onStart {
+class RegisterUseCase(private val authRepository: IAuthRepository) {
+    operator fun invoke(requestBody: HashMap<String, String>): Flow<UiState<Register>> = flow {
+        authRepository.registerToApi(requestBody).onStart {
             emit(UiState.loading())
         }.collect { response ->
             emit(UiState.hideLoading())
@@ -28,14 +24,4 @@ class LoginUseCase(private val authRepository: IAuthRepository) {
             }
         }
     }
-
-    fun saveLoginState(coroutineScope: CoroutineScope) =
-        coroutineScope.launch {
-            authRepository.setLoginState(true)
-        }
-
-    fun saveTokenKey(tokenKey: String, coroutineScope: CoroutineScope) =
-        coroutineScope.launch {
-            authRepository.setTokenKey(tokenKey)
-        }
 }
