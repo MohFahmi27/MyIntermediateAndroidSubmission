@@ -3,6 +3,7 @@ package com.mohfahmi.storyapp.home
 import android.content.Intent
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
@@ -37,6 +38,13 @@ class HomeActivity : AppCompatActivity() {
             rvStory.setLayoutManager(LinearLayoutManager(this@HomeActivity))
             rvStory.addVeiledItems(5)
             getAllStories()
+
+            efbCreateStory.setOnClickListener {
+                Toast.makeText(this@HomeActivity, "testing", Toast.LENGTH_SHORT).show()
+            }
+            efbChangeLanguage.setOnClickListener {
+
+            }
         }
     }
 

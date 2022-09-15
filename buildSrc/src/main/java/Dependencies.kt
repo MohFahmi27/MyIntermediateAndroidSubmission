@@ -15,10 +15,8 @@ object Dependencies {
         const val cardView = "androidx.cardview:cardview:1.0.0"
         const val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
         const val savedState = "androidx.savedstate:savedstate:1.2.0"
-        const val viewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
         const val activity = "androidx.activity:activity:${Versions.ACTIVITY_FRAGMENT_VERSION}"
         const val fragment = "androidx.fragment:fragment:${Versions.ACTIVITY_FRAGMENT_VERSION}"
-        const val coorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
     }
 
     object UiLibs {
@@ -31,7 +29,7 @@ object Dependencies {
         const val lottieAnimation = "com.airbnb.android:lottie:5.0.3"
         const val vBindingDelegate = "com.github.yogacp:android-viewbinding:1.0.4"
         const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-        const val balloonTooltips = "com.github.skydoves:balloon:1.4.6"
+        const val expandableFab = "com.nambimobile.widgets:expandable-fab:1.2.1"
     }
 
     object Lifecycle {
@@ -71,16 +69,6 @@ object Dependencies {
         const val koinJvm = "io.insert-koin:koin-core-jvm:${Versions.KOIN_VERSION}"
     }
 
-    object Firebase {
-        const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:18.2.11"
-        const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:21.0.0"
-    }
-
-    object GoogleMaps {
-        const val googleMaps = "com.google.android.gms:play-services-maps:18.0.2"
-        const val googleMapsLocation = "com.google.android.gms:play-services-location:20.0.0"
-    }
-
     object Testing {
         const val junit = "junit:junit:4.13.2"
         const val chuckerDebug =
@@ -89,12 +77,6 @@ object Dependencies {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.CHUCKER_VERSION}"
         const val testRunner = "androidx.test.ext:junit:1.1.3"
         const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
-    }
-
-    object Room {
-        const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
-        const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
-        const val roomKtx = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
     }
 
     object DataStore {

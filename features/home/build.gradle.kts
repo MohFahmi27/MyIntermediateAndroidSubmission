@@ -39,5 +39,6 @@ dependencies {
     implementation(project(":core"))
     implementation(Dependencies.UiLibs.androidVeil)
     implementation(Dependencies.UiLibs.swipeRefresh)
+    implementation(Dependencies.UiLibs.expandableFab)
     commonAndroidLibrary()
 }

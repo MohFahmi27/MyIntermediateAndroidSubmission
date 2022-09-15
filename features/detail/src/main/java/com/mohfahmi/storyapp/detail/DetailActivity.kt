@@ -42,7 +42,7 @@ class DetailActivity : AppCompatActivity() {
             tvStoryDescription.text = spannable
 
             btnBack.setOnClickListener {
-                finish()
+                onBackPressed()
             }
         }
     }

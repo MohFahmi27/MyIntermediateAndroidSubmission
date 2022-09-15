@@ -15,4 +15,6 @@
     <string name="story_image">Story Image</string>
     <string name="try_again">Try Again</string>
     <string name="back">Back</string>
+    <string name="create_story">Create Story</string>
+    <string name="change_language">Change Language</string>
 </resources>
