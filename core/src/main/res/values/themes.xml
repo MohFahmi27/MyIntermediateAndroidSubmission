@@ -12,7 +12,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/primaryColor</item>
         <item name="android:textColor">@color/primaryTextColor</item>
-        <item name="fontFamily">@font/belgrano_regular</item>
+        <item name="android:fontFamily">@font/belgrano_regular</item>
         <!--        <item name="android:textSize">@dimen/_12ssp</item>-->
         <item name="android:statusBarColor">@color/primaryColor</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -43,5 +43,9 @@
         <item name="boxStrokeColor">@color/primaryTextColor</item>
         <item name="boxStrokeWidth">@dimen/_1sdp</item>
         <item name="expandedHintEnabled">false</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize5Percent" parent="">
+        <item name="cornerSize">5%</item>
     </style>
 </resources>

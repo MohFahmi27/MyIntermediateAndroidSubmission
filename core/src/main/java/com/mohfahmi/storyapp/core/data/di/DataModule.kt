@@ -5,6 +5,8 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.mohfahmi.storyapp.core.BuildConfig
 import com.mohfahmi.storyapp.core.data.repository.auth.AuthRepository
 import com.mohfahmi.storyapp.core.data.repository.auth.IAuthRepository
+import com.mohfahmi.storyapp.core.data.repository.story.IStoryRepository
+import com.mohfahmi.storyapp.core.data.repository.story.StoryRepository
 import com.mohfahmi.storyapp.core.data.source.local.AppDataStore
 import com.mohfahmi.storyapp.core.data.source.local.DataStoreDataSource
 import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
@@ -54,4 +56,5 @@ val repositoryModule = module {
     factory { DataStoreDataSource(androidContext().AppDataStore) }
     factory { RemoteDataSource(get()) }
     single<IAuthRepository> { AuthRepository(get(), get()) }
+    single<IStoryRepository> { StoryRepository(get()) }
 }

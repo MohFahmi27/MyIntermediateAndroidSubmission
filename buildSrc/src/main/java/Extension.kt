@@ -15,6 +15,8 @@ fun DependencyHandler.commonAndroidLibrary() {
     implementation(Dependencies.UiLibs.sdp)
     implementation(Dependencies.UiLibs.ssp)
     implementation(Dependencies.UiLibs.fancyToast)
+    implementation(Dependencies.UiLibs.coil)
+    implementation(Dependencies.UiLibs.coilBase)
     implementation(Dependencies.NavComponent.navUi)
     implementation(Dependencies.NavComponent.navUiKtx)
     implementation(Dependencies.NavComponent.navFragmentKtx)

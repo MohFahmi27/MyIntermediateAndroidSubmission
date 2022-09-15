@@ -1,11 +1,74 @@
 package com.mohfahmi.storyapp.home
 
 import android.os.Bundle
+import android.viewbinding.library.activity.viewBinding
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.mohfahmi.storyapp.core.domain.models.Story
+import com.mohfahmi.storyapp.core.utils.Status
+import com.mohfahmi.storyapp.core.utils.UiState
+import com.mohfahmi.storyapp.core.utils.invisible
+import com.mohfahmi.storyapp.core.utils.visible
+import com.mohfahmi.storyapp.home.adapter.StoriesAdapter
+import com.mohfahmi.storyapp.home.databinding.ActivityHomeBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
+
+    private val binding: ActivityHomeBinding by viewBinding()
+    private val viewModel: HomeViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+
+        initViews()
     }
+
+    private fun initViews() {
+        with(binding) {
+            srlStory.setOnRefreshListener {
+                getAllStories()
+            }
+            rvStory.setLayoutManager(LinearLayoutManager(this@HomeActivity))
+            rvStory.addVeiledItems(5)
+            getAllStories()
+        }
+    }
+
+    private fun getAllStories() {
+        viewModel.tokenKey.observe(this) { token ->
+            viewModel.getAllStories(token).observe(this, ::manageAllStoriesResponse)
+        }
+    }
+
+    private fun manageAllStoriesResponse(response: UiState<ArrayList<Story>>) {
+        with(binding) {
+            when (response.status) {
+                Status.LOADING -> {
+                    rvStory.veil()
+                    llLayoutError.invisible()
+                    srlStory.isRefreshing = false
+                }
+                Status.HIDE_LOADING -> {
+                    rvStory.unVeil()
+                }
+                Status.SUCCESS -> {
+                    llLayoutError.invisible()
+                    val adapter = response.data?.let {
+                        StoriesAdapter(it) {
+                        }
+                    }
+                    rvStory.setAdapter(adapter)
+                }
+                Status.ERROR -> {
+                    llLayoutError.visible()
+                    tvErrorMessage.text = response.message
+                    btnTryAgain.setOnClickListener {
+                        getAllStories()
+                    }
+                }
+            }
+        }
+    }
+
 }

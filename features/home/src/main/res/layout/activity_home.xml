@@ -4,17 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/_20sdp"
     tools:context=".HomeActivity">
 
     <TextView
+        android:id="@+id/tv_title_main"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mountella_trial_bold"
+        android:text="@string/all_stories"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/gd_end"
+        app:layout_constraintStart_toStartOf="@+id/gd_start"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/v_line_main"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/primaryTextColor"
+        app:layout_constraintEnd_toEndOf="@id/gd_end"
+        app:layout_constraintStart_toStartOf="@id/gd_start"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_main" />
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gd_end"
+        app:layout_constraintStart_toStartOf="@id/gd_start"
+        app:layout_constraintTop_toBottomOf="@id/v_line_main">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_story"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.skydoves.androidveil.VeilRecyclerFrameView
+                android:id="@+id/rv_story"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:veilFrame_baseAlpha="0.6"
+                app:veilFrame_baseColor="@color/secondaryLightColor"
+                app:veilFrame_highlightAlpha="1.0"
+                app:veilFrame_highlightColor="@color/secondaryColor"
+                app:veilFrame_layout="@layout/lyt_placeholder"
+                app:veilFrame_radius="0dp"
+                app:veilFrame_shimmerEnable="true"
+                app:veilFrame_veiled="true" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_layout_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                app:srcCompat="@drawable/ilu_failed_load" />
+
+            <TextView
+                android:id="@+id/tv_error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:textSize="@dimen/_16ssp"
+                tools:text="@string/something_went_wrong" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_try_again"
+                style="@style/primaryButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginVertical="@dimen/_20sdp"
+                android:text="@string/try_again" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="@dimen/_20ssp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_20sdp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

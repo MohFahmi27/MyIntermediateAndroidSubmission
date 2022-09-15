@@ -22,8 +22,6 @@ object Dependencies {
     }
 
     object UiLibs {
-        const val codeScanner = "com.github.yuriy-budiyev:code-scanner:2.3.2"
-        const val dotsIndicator = "com.tbuonomo:dotsindicator:4.2"
         const val androidVeil = "com.github.skydoves:androidveil:1.1.2"
         const val fancyToast = "io.github.shashank02051997:FancyToast:2.0.1"
         const val sdp = "com.intuit.sdp:sdp-android:${Versions.SDP_SSP_VERSION}"
@@ -32,6 +30,7 @@ object Dependencies {
         const val coilBase = "io.coil-kt:coil-base:${Versions.COIL_VERSION}"
         const val lottieAnimation = "com.airbnb.android:lottie:5.0.3"
         const val vBindingDelegate = "com.github.yogacp:android-viewbinding:1.0.4"
+        const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
         const val balloonTooltips = "com.github.skydoves:balloon:1.4.6"
     }
 

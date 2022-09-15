@@ -15,6 +15,7 @@
             android:id="@+id/tv_login_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/mountella_trial_bold"
             android:text="@string/login"
             android:textSize="@dimen/_25ssp"
             android:textStyle="bold"

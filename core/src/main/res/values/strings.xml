@@ -11,4 +11,7 @@
     <string name="whoops">Whoops</string>
     <string name="something_went_wrong">Something Went Wrong</string>
     <string name="register_successfully">Successfully Registered</string>
+    <string name="all_stories">All Stories</string>
+    <string name="story_image">Story Image</string>
+    <string name="try_again">Try Again</string>
 </resources>
