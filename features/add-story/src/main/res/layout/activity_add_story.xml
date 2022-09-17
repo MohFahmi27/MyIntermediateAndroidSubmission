@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/_20sdp"
+    tools:context=".AddStoryActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/mountella_trial_bold"
+            android:maxLines="2"
+            android:text="@string/add_story"
+            android:textSize="@dimen/_25ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@+id/gd_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_line_main"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/primaryTextColor"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_main" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_story"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:contentDescription="@string/story_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_photo_loading"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/v_line_main"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize5Percent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_camera"
+            style="@style/primaryButtonStyle"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="@string/camera"
+            app:icon="@drawable/ic_camera"
+            app:iconGravity="textStart"
+            app:layout_constraintEnd_toStartOf="@id/gd_center"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/img_story" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_gallery"
+            style="@style/primaryButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/img_story"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            app:icon="@drawable/ic_gallery"
+            android:text="@string/gallery"
+            app:iconGravity="textStart"
+            app:layout_constraintStart_toEndOf="@id/gd_center"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"/>
+
+        <TextView
+            android:id="@+id/tv_description_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            android:labelFor="@id/ed_add_description"
+            android:layout_marginTop="@dimen/_24sdp"
+            app:layout_constraintStart_toEndOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_camera"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_description"
+            style="@style/PrimaryTextInputLayout"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_description_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_add_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:gravity="top|start"
+                android:textCursorDrawable="@drawable/sh_cursor_edittext"
+                tools:ignore="RtlSymmetry" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_upload"
+            style="@style/primaryButtonStyle"
+            android:text="@string/upload"
+            android:layout_marginVertical="@dimen/_20sdp"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintTop_toBottomOf="@id/til_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

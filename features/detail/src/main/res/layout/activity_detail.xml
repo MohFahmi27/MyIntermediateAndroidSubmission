@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/_20sdp"
+    tools:context=".DetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_minus12sdp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/back"
+            android:padding="@dimen/_12sdp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="@+id/gd_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/v_line_main"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/primaryTextColor"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/btn_back" />
+
+        <TextView
+            android:id="@+id/tv_story_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:fontFamily="@font/mountella_trial_bold"
+            android:textSize="@dimen/_35ssp"
+            android:transitionName="name"
+            app:layout_constraintEnd_toStartOf="@+id/gd_end"
+            app:layout_constraintStart_toEndOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/v_line_main"
+            tools:text="@tools:sample/full_names" />
+
+        <ImageView
+            android:id="@+id/img_story"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_230sdp"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:contentDescription="@string/story_image"
+            android:scaleType="centerCrop"
+            android:transitionName="image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_story_name"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/tv_story_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_22sdp"
+            android:lineSpacingExtra="@dimen/_4sdp"
+            android:textSize="@dimen/_13ssp"
+            android:transitionName="description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gd_end"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/img_story"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_20sdp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gd_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_20sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,3 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
+include(":features:add-story")
+
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -15,3 +20,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "StoryApp"
 include(":app")
+include(":features:auth")
+include(":core")
+include(":features:home")
+include(":features:detail")

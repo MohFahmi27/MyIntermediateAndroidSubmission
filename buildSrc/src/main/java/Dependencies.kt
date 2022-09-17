@@ -12,18 +12,9 @@ object Dependencies {
         const val core = "androidx.core:core:${Versions.CORE_VERSION}"
         const val material = "com.google.android.material:material:1.6.1"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
-        const val cardView = "androidx.cardview:cardview:1.0.0"
-        const val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
-        const val savedState = "androidx.savedstate:savedstate:1.2.0"
-        const val viewPager2 = "androidx.viewpager2:viewpager2:1.0.0"
-        const val activity = "androidx.activity:activity:${Versions.ACTIVITY_FRAGMENT_VERSION}"
-        const val fragment = "androidx.fragment:fragment:${Versions.ACTIVITY_FRAGMENT_VERSION}"
-        const val coorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
     }
 
     object UiLibs {
-        const val codeScanner = "com.github.yuriy-budiyev:code-scanner:2.3.2"
-        const val dotsIndicator = "com.tbuonomo:dotsindicator:4.2"
         const val androidVeil = "com.github.skydoves:androidveil:1.1.2"
         const val fancyToast = "io.github.shashank02051997:FancyToast:2.0.1"
         const val sdp = "com.intuit.sdp:sdp-android:${Versions.SDP_SSP_VERSION}"
@@ -32,7 +23,8 @@ object Dependencies {
         const val coilBase = "io.coil-kt:coil-base:${Versions.COIL_VERSION}"
         const val lottieAnimation = "com.airbnb.android:lottie:5.0.3"
         const val vBindingDelegate = "com.github.yogacp:android-viewbinding:1.0.4"
-        const val balloonTooltips = "com.github.skydoves:balloon:1.4.6"
+        const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+        const val expandableFab = "com.nambimobile.widgets:expandable-fab:1.2.1"
     }
 
     object Lifecycle {
@@ -72,14 +64,8 @@ object Dependencies {
         const val koinJvm = "io.insert-koin:koin-core-jvm:${Versions.KOIN_VERSION}"
     }
 
-    object Firebase {
-        const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:18.2.11"
-        const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:21.0.0"
-    }
-
-    object GoogleMaps {
-        const val googleMaps = "com.google.android.gms:play-services-maps:18.0.2"
-        const val googleMapsLocation = "com.google.android.gms:play-services-location:20.0.0"
+    object Permission {
+        const val easyPermissionKtx = "com.vmadalin:easypermissions-ktx:1.0.0"
     }
 
     object Testing {
@@ -90,12 +76,6 @@ object Dependencies {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.CHUCKER_VERSION}"
         const val testRunner = "androidx.test.ext:junit:1.1.3"
         const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
-    }
-
-    object Room {
-        const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
-        const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
-        const val roomKtx = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
     }
 
     object DataStore {
@@ -115,6 +95,5 @@ object Dependencies {
         const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
         const val okhttp3Log =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
-        const val sandwich = "com.github.skydoves:sandwich:1.2.4"
     }
 }

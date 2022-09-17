@@ -3,7 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_app_icon.xml" value="0.1715" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_broken_image.xml" value="0.1515" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_left_arrow.xml" value="0.1515" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/ic_read_more.xml" value="0.1515" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/drawable/sh_cursor_edittext.xml" value="0.2395" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/font/biorhyme_bold.xml" value="0.22710004221190375" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/layout/bottom_sheet_dialog_fragment_error.xml" value="0.536" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/core/src/main/res/layout/dialog_fragment_loading.xml" value="0.536" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/add-story/src/main/res/layout/activity_add_story.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/activity_auth.xml" value="0.176" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/auth/src/main/res/layout/fragment_register.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/detail/src/main/res/layout/activity_detail.xml" value="0.1936725096194955" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/home/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/home/src/main/res/layout/items_story.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/home/src/main/res/layout/lyt_error_story.xml" value="0.20436083796494228" />
+        <entry key="..\:/Users/Asus/Documents/GitHub/StoryApp/features/home/src/main/res/layout/lyt_placeholder.xml" value="0.20436083796494228" />
       </map>
     </option>
   </component>
