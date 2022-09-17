@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_18sdp"
-            android:labelFor="@id/til_login_email"
+            android:labelFor="@id/ed_login_email"
             android:text="@string/email"
             android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="@+id/gd_start"
@@ -66,7 +66,7 @@
                 android:id="@+id/ed_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textWebEmailAddress"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:textCursorDrawable="@drawable/sh_cursor_edittext"
                 tools:ignore="RtlSymmetry" />
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
-            android:labelFor="@id/til_password"
+            android:labelFor="@id/ed_login_password"
             android:text="@string/password"
             android:textSize="@dimen/_13ssp"
             app:layout_constraintStart_toStartOf="@+id/gd_start"
@@ -108,17 +108,17 @@
             android:id="@+id/btn_login"
             style="@style/primaryButtonStyle"
             android:layout_marginTop="@dimen/_24sdp"
-            android:text="Login"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="@id/gd_end"
             app:layout_constraintStart_toStartOf="@id/gd_start"
             app:layout_constraintTop_toBottomOf="@+id/til_password"
-            tools:ignore="HardcodedText" />
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
             style="@style/primaryButtonStyle"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Register"
+            android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/gd_end"
             app:layout_constraintStart_toStartOf="@+id/gd_start"

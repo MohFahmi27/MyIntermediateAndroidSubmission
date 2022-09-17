@@ -9,4 +9,6 @@ val domainModule = module {
     factory { RegisterUseCase(get()) }
     factory { GetAllStoriesUseCase(get()) }
     factory { GetUserTokenUseCase(get()) }
+    factory { LogOutUseCase(get(), get()) }
+    factory { UploadStoryUseCase(get()) }
 }

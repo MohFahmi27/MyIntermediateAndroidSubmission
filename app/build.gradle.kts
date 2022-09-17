@@ -15,7 +15,7 @@ android {
     compileSdk = COMPILE_SDK
 
     defaultConfig {
-        applicationId = "co.minsatu.app"
+        applicationId = "com.mohfahmi.storyapp"
         minSdk = MIN_SDK
         targetSdk = TARGET_SDK
         versionCode =
@@ -50,5 +50,6 @@ dependencies {
     implementation(project(":features:auth"))
     implementation(project(":features:home"))
     implementation(project(":features:detail"))
+    implementation(project(":features:add-story"))
     commonAndroidLibrary()
 }

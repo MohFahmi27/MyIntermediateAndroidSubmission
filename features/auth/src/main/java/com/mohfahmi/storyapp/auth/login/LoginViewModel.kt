@@ -16,7 +16,7 @@ class LoginViewModel(private val loginUseCase: LoginUseCase):ViewModel() {
         return loginUseCase.execute(requestBody).asLiveData()
     }
 
-    fun saveLoginState() = loginUseCase.saveLoginState(viewModelScope)
+    fun loginSuccessful() = loginUseCase.setLoginState(viewModelScope, true)
 
     fun saveTokenKey(token: String) = loginUseCase.saveTokenKey(token, viewModelScope)
 }

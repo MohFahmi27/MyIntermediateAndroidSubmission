@@ -60,7 +60,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 findNavController().navigateUp()
             }
             Status.SUCCESS -> {
-                viewModel.saveLoginState()
+                viewModel.loginSuccessful()
                 loginState.data?.let { viewModel.saveTokenKey(it.token) }
                 startActivity(Intent(requireActivity(), Class.forName(HOME_ROUTE)))
                 requireActivity().finish()

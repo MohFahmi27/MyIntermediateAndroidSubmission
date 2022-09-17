@@ -2,19 +2,16 @@ package com.mohfahmi.storyapp.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.viewbinding.library.activity.viewBinding
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohfahmi.storyapp.core.domain.models.Story
+import com.mohfahmi.storyapp.core.utils.*
 import com.mohfahmi.storyapp.core.utils.NavigationHelper.DETAIL_EXTRA
 import com.mohfahmi.storyapp.core.utils.NavigationHelper.DETAIL_ROUTE
-import com.mohfahmi.storyapp.core.utils.Status
-import com.mohfahmi.storyapp.core.utils.UiState
-import com.mohfahmi.storyapp.core.utils.invisible
-import com.mohfahmi.storyapp.core.utils.visible
 import com.mohfahmi.storyapp.home.adapter.StoriesAdapter
 import com.mohfahmi.storyapp.home.databinding.ActivityHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -40,10 +37,13 @@ class HomeActivity : AppCompatActivity() {
             getAllStories()
 
             efbCreateStory.setOnClickListener {
-                Toast.makeText(this@HomeActivity, "testing", Toast.LENGTH_SHORT).show()
+                navigateToAddStory()
             }
             efbChangeLanguage.setOnClickListener {
-
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            }
+            efbLogOut.setOnClickListener {
+                logOutAction()
             }
         }
     }
@@ -96,6 +96,26 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun logOutAction() {
+        startActivity(
+            Intent(
+                this@HomeActivity,
+                Class.forName(NavigationHelper.AUTH_ROUTE)
+            )
+        )
+        viewModel.logOut()
+        finish()
+    }
+
+    private fun navigateToAddStory() {
+        startActivity(
+            Intent(
+                this@HomeActivity,
+                Class.forName(NavigationHelper.ADD_STORY_ROUTE)
+            )
+        )
     }
 
 }

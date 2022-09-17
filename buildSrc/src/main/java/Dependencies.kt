@@ -12,11 +12,6 @@ object Dependencies {
         const val core = "androidx.core:core:${Versions.CORE_VERSION}"
         const val material = "com.google.android.material:material:1.6.1"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
-        const val cardView = "androidx.cardview:cardview:1.0.0"
-        const val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
-        const val savedState = "androidx.savedstate:savedstate:1.2.0"
-        const val activity = "androidx.activity:activity:${Versions.ACTIVITY_FRAGMENT_VERSION}"
-        const val fragment = "androidx.fragment:fragment:${Versions.ACTIVITY_FRAGMENT_VERSION}"
     }
 
     object UiLibs {
@@ -67,6 +62,10 @@ object Dependencies {
         const val koinAndroid = "io.insert-koin:koin-android:${Versions.KOIN_VERSION}"
         const val koinCore = "io.insert-koin:koin-core:${Versions.KOIN_VERSION}"
         const val koinJvm = "io.insert-koin:koin-core-jvm:${Versions.KOIN_VERSION}"
+    }
+
+    object Permission {
+        const val easyPermissionKtx = "com.vmadalin:easypermissions-ktx:1.0.0"
     }
 
     object Testing {

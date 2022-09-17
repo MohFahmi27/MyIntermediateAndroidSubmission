@@ -138,12 +138,11 @@
             android:id="@+id/btn_register"
             style="@style/primaryButtonStyle"
             android:layout_marginVertical="@dimen/_24sdp"
-            android:text="Register"
+            android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/gd_end"
             app:layout_constraintStart_toStartOf="@+id/gd_start"
-            app:layout_constraintTop_toBottomOf="@+id/til_password"
-            tools:ignore="HardcodedText" />
+            app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gd_start"

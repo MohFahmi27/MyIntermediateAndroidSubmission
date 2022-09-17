@@ -8,7 +8,7 @@
     <string name="register">Register</string>
     <string name="full_name">Full Name</string>
     <string name="loading">Loading…</string>
-    <string name="whoops">Whoops</string>
+    <string name="whoops" translatable="false">Whoops</string>
     <string name="something_went_wrong">Something Went Wrong</string>
     <string name="register_successfully">Successfully Registered</string>
     <string name="all_stories">All Stories</string>
@@ -17,4 +17,14 @@
     <string name="back">Back</string>
     <string name="create_story">Create Story</string>
     <string name="change_language">Change Language</string>
+    <string name="log_out">Log Out</string>
+    <string name="add_story">Add Story</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="description">Description</string>
+    <string name="upload">Upload</string>
+    <string name="permission_camera_request">This application cannot fully work without Camera Permission.</string>
+    <string name="permission_storage_request">This application cannot fully work without Storage Permission.</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="upload_story_success">Upload Story Success</string>
 </resources>

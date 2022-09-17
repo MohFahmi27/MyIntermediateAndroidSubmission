@@ -10,6 +10,7 @@ import coil.load
 import com.mohfahmi.storyapp.core.R
 import com.mohfahmi.storyapp.core.domain.models.Story
 import com.mohfahmi.storyapp.core.utils.NavigationHelper
+import com.mohfahmi.storyapp.core.utils.capitalize
 import com.mohfahmi.storyapp.detail.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -31,8 +32,8 @@ class DetailActivity : AppCompatActivity() {
                 error(R.drawable.img_error_image)
                 placeholder(R.drawable.img_photo_loading)
             }
-            tvStoryName.text = storyIntent.name.replaceFirstChar { it.uppercase() }
-            val spannable = SpannableString(storyIntent.description)
+            tvStoryName.text = storyIntent.name.capitalize()
+            val spannable = SpannableString(storyIntent.description.capitalize())
             spannable.setSpan(
                 RelativeSizeSpan(2.5f),
                 0,

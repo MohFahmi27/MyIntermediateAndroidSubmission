@@ -29,9 +29,9 @@ class LoginUseCase(private val authRepository: IAuthRepository) {
         }
     }
 
-    fun saveLoginState(coroutineScope: CoroutineScope) =
+    fun setLoginState(coroutineScope: CoroutineScope, state: Boolean) =
         coroutineScope.launch {
-            authRepository.setLoginState(true)
+            authRepository.setLoginState(state)
         }
 
     fun saveTokenKey(tokenKey: String, coroutineScope: CoroutineScope) =

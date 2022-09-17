@@ -21,4 +21,8 @@ class LoadingDialogFragment : DialogFragment() {
         isCancelable = false
         return binding.root
     }
+
+    companion object {
+        const val TAG = "LoadingDialogFragment"
+    }
 }

@@ -5,4 +5,5 @@ object NavigationHelper {
     const val HOME_ROUTE = "com.mohfahmi.storyapp.home.HomeActivity"
     const val DETAIL_ROUTE = "com.mohfahmi.storyapp.detail.DetailActivity"
     const val DETAIL_EXTRA = "com.mohfahmi.storyapp.detail.detail_extra"
+    const val ADD_STORY_ROUTE = "com.mohfahmi.storyapp.add_story.AddStoryActivity"
 }

@@ -4,9 +4,12 @@ import com.mohfahmi.storyapp.core.data.source.remote.models.LoginResponse
 import com.mohfahmi.storyapp.core.data.source.remote.models.PostStoryResponse
 import com.mohfahmi.storyapp.core.data.source.remote.models.RegisterResponse
 import com.mohfahmi.storyapp.core.data.source.remote.models.StoriesResponse
+import okhttp3.RequestBody
 import retrofit2.Response
-import retrofit2.http.*
-import java.io.File
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 
 interface ApiService {
     @POST("login")
@@ -22,8 +25,7 @@ interface ApiService {
     @POST("stories")
     suspend fun uploadStory(
         @Header("Authorization") token: String,
-        @Field("description") description: String,
-        @Field("photo") photo: File,
+        @Body requestBody: RequestBody,
     ): Response<PostStoryResponse>
 
     @GET("stories")

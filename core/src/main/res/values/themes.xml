@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.StoryApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primaryColor</item>
-        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorPrimary">@color/secondaryColor</item>
+        <item name="colorPrimaryVariant">@color/secondaryDarkColor</item>
         <item name="colorOnPrimary">@color/primaryTextColor</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/secondaryColor</item>
@@ -25,6 +25,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/_50sdp</item>
         <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/primaryColor</item>
         <item name="elevation">0dp</item>
         <item name="cornerRadius">0dp</item>
         <item name="strokeColor">@color/primaryTextColor</item>

@@ -11,7 +11,9 @@
         android:id="@+id/tv_title_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:ellipsize="end"
         android:fontFamily="@font/mountella_trial_bold"
+        android:maxLines="2"
         android:text="@string/all_stories"
         android:textSize="@dimen/_25ssp"
         android:textStyle="bold"
@@ -109,7 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/_14sdp"
-            app:efab_icon="@drawable/ic_create" />
+            app:efab_icon="@drawable/ic_create"
+            app:efab_iconAnimationRotationDeg="-90" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/efb_create_story"
@@ -126,6 +129,14 @@
             app:fab_icon="@drawable/ic_translate"
             app:fab_orientation="portrait"
             app:label_text="@string/change_language" />
+
+        <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/efb_log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_logout"
+            app:fab_orientation="portrait"
+            app:label_text="@string/log_out" />
 
     </com.nambimobile.widgets.efab.ExpandableFabLayout>
 
