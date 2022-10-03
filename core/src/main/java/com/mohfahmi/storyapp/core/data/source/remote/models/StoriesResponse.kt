@@ -29,11 +29,11 @@ data class ListStoryItem(
 	val description: String? = null,
 
 	@Json(name="lon")
-	val lon: Any? = null,
+	val lon: Double? = null,
 
 	@Json(name="id")
 	val id: String? = null,
 
 	@Json(name="lat")
-	val lat: Any? = null
+	val lat: Double? = null
 )

@@ -29,6 +29,8 @@ fun StoriesResponse?.mapToDomain(): ArrayList<Story> {
                 storyItem?.name ?: "",
                 storyItem?.description ?: "",
                 storyItem?.photoUrl ?: "",
+                storyItem?.lat,
+                storyItem?.lon,
             )
         )
     }

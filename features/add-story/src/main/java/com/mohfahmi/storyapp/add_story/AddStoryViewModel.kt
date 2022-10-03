@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.mohfahmi.storyapp.core.domain.models.UploadStory
-import com.mohfahmi.storyapp.core.domain.use_cases.GetUserTokenUseCase
-import com.mohfahmi.storyapp.core.domain.use_cases.UploadStoryUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.GetUserTokenUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.story.UploadStoryUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine

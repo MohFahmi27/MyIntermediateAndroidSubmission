@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.mohfahmi.storyapp.core.domain.models.Story
-import com.mohfahmi.storyapp.core.domain.use_cases.GetAllStoriesUseCase
-import com.mohfahmi.storyapp.core.domain.use_cases.GetUserTokenUseCase
-import com.mohfahmi.storyapp.core.domain.use_cases.LogOutUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.GetUserTokenUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.LogOutUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.story.GetAllStoriesUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
 
 class HomeViewModel(

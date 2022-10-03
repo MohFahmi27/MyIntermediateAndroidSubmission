@@ -96,4 +96,9 @@ object Dependencies {
         const val okhttp3Log =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
     }
+
+    object GoogleMaps {
+        const val googleMaps = "com.google.android.gms:play-services-maps:18.0.2"
+        const val googleMapsLocation = "com.google.android.gms:play-services-location:20.0.0"
+    }
 }

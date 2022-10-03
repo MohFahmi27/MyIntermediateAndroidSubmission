@@ -39,6 +39,9 @@ class HomeActivity : AppCompatActivity() {
             efbCreateStory.setOnClickListener {
                 navigateToAddStory()
             }
+            efbStoryMap.setOnClickListener {
+                navigateToMapStory()
+            }
             efbChangeLanguage.setOnClickListener {
                 startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
             }
@@ -58,6 +61,7 @@ class HomeActivity : AppCompatActivity() {
         with(binding) {
             when (response.status) {
                 Status.LOADING -> {
+                    srlStory.visible()
                     rvStory.veil()
                     llLayoutError.invisible()
                     srlStory.isRefreshing = false
@@ -88,6 +92,7 @@ class HomeActivity : AppCompatActivity() {
                     rvStory.setAdapter(adapter)
                 }
                 Status.ERROR -> {
+                    srlStory.invisible()
                     llLayoutError.visible()
                     tvErrorMessage.text = response.message
                     btnTryAgain.setOnClickListener {
@@ -114,6 +119,15 @@ class HomeActivity : AppCompatActivity() {
             Intent(
                 this@HomeActivity,
                 Class.forName(NavigationHelper.ADD_STORY_ROUTE)
+            )
+        )
+    }
+
+    private fun navigateToMapStory() {
+        startActivity(
+            Intent(
+                this@HomeActivity,
+                Class.forName(NavigationHelper.STORY_MAP_ROUTE)
             )
         )
     }

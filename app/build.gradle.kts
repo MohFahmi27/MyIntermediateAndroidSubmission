@@ -51,5 +51,6 @@ dependencies {
     implementation(project(":features:home"))
     implementation(project(":features:detail"))
     implementation(project(":features:add-story"))
+    implementation(project(":features:map-story"))
     commonAndroidLibrary()
 }

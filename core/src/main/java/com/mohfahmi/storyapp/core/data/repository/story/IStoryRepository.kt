@@ -7,6 +7,17 @@ import kotlinx.coroutines.flow.Flow
 import java.io.File
 
 interface IStoryRepository {
-    fun getAllStories(token: String): Flow<ApiResponse<ArrayList<Story>>>
-    fun postStory(token: String, description: String, imgStory: File): Flow<ApiResponse<UploadStory>>
+    fun getAllStories(
+        token: String,
+    ): Flow<ApiResponse<ArrayList<Story>>>
+
+    fun getAllWithStories(
+        token: String,
+    ): Flow<ApiResponse<ArrayList<Story>>>
+
+    fun postStory(
+        token: String,
+        description: String,
+        imgStory: File
+    ): Flow<ApiResponse<UploadStory>>
 }

@@ -27,4 +27,5 @@
     <string name="permission_granted">Izin Diberikan</string>
     <string name="permission_storage_request">Aplikasi Tidak akan penuh beroperasi ketika permission penyimpanan tidak di berikan.</string>
     <string name="upload_story_success">Unggah Cerita Berhasil</string>
+    <string name="map_story">Peta Cerita</string>
 </resources>

@@ -10,8 +10,13 @@ import okhttp3.MultipartBody
 import java.io.File
 
 class StoryRepository(private val remoteDataSource: RemoteDataSource) : IStoryRepository {
-    override fun getAllStories(token: String): Flow<ApiResponse<ArrayList<Story>>> =
+    override fun getAllStories(
+        token: String
+    ): Flow<ApiResponse<ArrayList<Story>>> =
         remoteDataSource.getAllStories("Bearer $token")
+
+    override fun getAllWithStories(token: String): Flow<ApiResponse<ArrayList<Story>>> =
+        remoteDataSource.getStoriesWithLocation("Bearer $token")
 
     override fun postStory(
         token: String,

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.mohfahmi.storyapp.core.domain.models.Login
-import com.mohfahmi.storyapp.core.domain.use_cases.LoginUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.LoginUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
 
 class LoginViewModel(private val loginUseCase: LoginUseCase):ViewModel() {
