@@ -76,7 +76,7 @@ class HomeActivity : AppCompatActivity() {
         binding.rvStory.setAdapter(adapter.withLoadStateFooter(footer = LoadingStateAdapter {
             adapter.retry()
         }))
-        viewModel.tokenKey.observe(this) { token ->
+        viewModel.tokenKey().observe(this) { token ->
             viewModel.getAllStories(token).observe(this, ::manageAllStoriesResponse)
         }
     }

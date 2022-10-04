@@ -10,18 +10,21 @@ import com.mohfahmi.storyapp.core.domain.models.Story
 import com.mohfahmi.storyapp.core.domain.use_cases.auth.GetUserTokenUseCase
 import com.mohfahmi.storyapp.core.domain.use_cases.auth.LogOutUseCase
 import com.mohfahmi.storyapp.core.domain.use_cases.story.GetAllStoriesUseCase
+import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val getAllStoriesUseCase: GetAllStoriesUseCase,
     private val logOutUseCase: LogOutUseCase,
-    getUserTokenUseCase: GetUserTokenUseCase
+    private val getUserTokenUseCase: GetUserTokenUseCase,
 ) : ViewModel() {
     fun getAllStories(token: String): LiveData<PagingData<Story>> =
         getAllStoriesUseCase(token).cachedIn(viewModelScope)
 
-    val tokenKey: LiveData<String> = getUserTokenUseCase().asLiveData()
+    fun tokenKey(): LiveData<String> = getUserTokenUseCase().asLiveData()
 
     fun logOut() {
-        logOutUseCase(viewModelScope)
+        viewModelScope.launch {
+            logOutUseCase()
+        }
     }
 }

@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.combine
 import java.io.File
 
 class AddStoryViewModel(
-    getUserTokenUseCase: GetUserTokenUseCase,
+    private val getUserTokenUseCase: GetUserTokenUseCase,
     private val uploadStoryUseCase: UploadStoryUseCase
 ) : ViewModel() {
     var isImagePicked = MutableStateFlow(false)
@@ -25,7 +25,7 @@ class AddStoryViewModel(
         imagePicked && descriptionInput.isNotEmpty()
     }
 
-    val token: LiveData<String> = getUserTokenUseCase().asLiveData()
+    fun token(): LiveData<String> = getUserTokenUseCase().asLiveData()
 
     fun uploadStory(
         token: String,

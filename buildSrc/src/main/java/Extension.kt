@@ -35,8 +35,16 @@ fun DependencyHandler.commonAndroidLibrary() {
     implementation(Dependencies.Lifecycle.viewmodel)
     implementation(Dependencies.Lifecycle.viewmodelKtx)
     implementation(Dependencies.Lifecycle.viewmodelSavedState)
+    implementation(Dependencies.Testing.espressoIdling)
     testImplementation(Dependencies.Testing.junit)
+    testImplementation(Dependencies.Testing.mockitoCore)
+    testImplementation(Dependencies.Testing.mockitoInline)
+    testImplementation(Dependencies.Testing.coreTesting)
+    testImplementation(Dependencies.Testing.coroutineTest)
     androidTestImplementation(Dependencies.Testing.testRunner)
+    androidTestImplementation(Dependencies.Testing.mockWebServer)
+    androidTestImplementation(Dependencies.Testing.okhttpTls)
+    androidTestImplementation(Dependencies.Testing.espressoContrib)
     androidTestImplementation(Dependencies.Testing.espressoCore)
 }
 

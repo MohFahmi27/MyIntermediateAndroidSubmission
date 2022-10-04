@@ -49,7 +49,7 @@ class MapStoryActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     private fun getStoriesWithLocation() {
-        viewModel.tokenKey.observe(this) {
+        viewModel.tokenKey().observe(this) {
             viewModel.getStoriesWithLocation(it).observe(this, ::manageAllStoriesResponse)
         }
     }

@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.mohfahmi.storyapp.core.domain.models.Login
 import com.mohfahmi.storyapp.core.domain.use_cases.auth.LoginUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
+import kotlinx.coroutines.launch
 
 class LoginViewModel(private val loginUseCase: LoginUseCase):ViewModel() {
     fun login(email: String, password: String): LiveData<UiState<Login>> {
@@ -16,7 +17,15 @@ class LoginViewModel(private val loginUseCase: LoginUseCase):ViewModel() {
         return loginUseCase.execute(requestBody).asLiveData()
     }
 
-    fun loginSuccessful() = loginUseCase.setLoginState(viewModelScope, true)
+    fun loginSuccessful() {
+        viewModelScope.launch {
+            loginUseCase.setLoginState(true)
+        }
+    }
 
-    fun saveTokenKey(token: String) = loginUseCase.saveTokenKey(token, viewModelScope)
+    fun saveTokenKey(token: String) {
+        viewModelScope.launch {
+            loginUseCase.saveTokenKey(token)
+        }
+    }
 }

@@ -52,5 +52,6 @@ dependencies {
     implementation(project(":features:detail"))
     implementation(project(":features:add-story"))
     implementation(project(":features:map-story"))
+    implementation(Dependencies.Paging.pagingKtx)
     commonAndroidLibrary()
 }

@@ -4,11 +4,9 @@ import com.mohfahmi.storyapp.core.data.repository.auth.IAuthRepository
 import com.mohfahmi.storyapp.core.domain.models.Login
 import com.mohfahmi.storyapp.core.utils.ApiResponse
 import com.mohfahmi.storyapp.core.utils.UiState
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
 
 class LoginUseCase(private val authRepository: IAuthRepository) {
     fun execute(
@@ -29,13 +27,9 @@ class LoginUseCase(private val authRepository: IAuthRepository) {
         }
     }
 
-    fun setLoginState(coroutineScope: CoroutineScope, state: Boolean) =
-        coroutineScope.launch {
-            authRepository.setLoginState(state)
-        }
+    suspend fun setLoginState(state: Boolean) =
+        authRepository.setLoginState(state)
 
-    fun saveTokenKey(tokenKey: String, coroutineScope: CoroutineScope) =
-        coroutineScope.launch {
-            authRepository.setTokenKey(tokenKey)
-        }
+    suspend fun saveTokenKey(tokenKey: String) = authRepository.setTokenKey(tokenKey)
+
 }

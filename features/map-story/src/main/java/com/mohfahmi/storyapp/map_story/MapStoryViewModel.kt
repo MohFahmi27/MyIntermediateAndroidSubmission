@@ -10,13 +10,13 @@ import com.mohfahmi.storyapp.core.utils.UiState
 
 class MapStoryViewModel(
     private val getStoriesLocationUseCase: GetStoriesLocationUseCase,
-    getUserTokenUseCase: GetUserTokenUseCase
+    private val getUserTokenUseCase: GetUserTokenUseCase
 ) : ViewModel() {
 
     fun getStoriesWithLocation(token: String): LiveData<UiState<ArrayList<Story>>> {
         return getStoriesLocationUseCase(token).asLiveData()
     }
 
-    val tokenKey: LiveData<String> = getUserTokenUseCase().asLiveData()
+    fun tokenKey(): LiveData<String> = getUserTokenUseCase().asLiveData()
 
 }

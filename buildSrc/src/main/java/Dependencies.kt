@@ -76,6 +76,15 @@ object Dependencies {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.CHUCKER_VERSION}"
         const val testRunner = "androidx.test.ext:junit:1.1.3"
         const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
+        const val mockitoCore = "org.mockito:mockito-core:${Versions.MOCKITO_VERSION}"
+        const val mockitoInline = "org.mockito:mockito-inline:${Versions.MOCKITO_VERSION}"
+        const val coroutineTest =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VERSION}"
+        const val coreTesting = "androidx.arch.core:core-testing:2.1.0"
+        const val espressoIdling = "androidx.test.espresso:espresso-idling-resource:3.4.0"
+        const val espressoContrib = "com.android.support.test.espresso:espresso-contrib:3.0.2"
+        const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_VERSION}"
+        const val okhttpTls = "com.squareup.okhttp3:okhttp-tls:{${Versions.OKHTTP_VERSION}}"
     }
 
     object DataStore {

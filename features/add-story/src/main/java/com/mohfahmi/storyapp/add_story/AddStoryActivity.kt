@@ -230,7 +230,7 @@ class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
         )
 
     private fun uploadStory(description: String, img: File) {
-        viewModel.token.observe(this) {
+        viewModel.token().observe(this) {
             viewModel.uploadStory(it, description, img, lat, lng).observe(
                 this,
                 ::manageUploadStoryResponse
