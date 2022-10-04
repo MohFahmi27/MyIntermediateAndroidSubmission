@@ -10,9 +10,15 @@ import kotlinx.coroutines.flow.onStart
 import java.io.File
 
 class UploadStoryUseCase(private val storyRepository: IStoryRepository) {
-    operator fun invoke(token: String, description: String, imgStory: File):
+    operator fun invoke(
+        token: String,
+        description: String,
+        imgStory: File,
+        lat: Double?,
+        lon: Double?
+    ):
             Flow<UiState<UploadStory>> = flow {
-        storyRepository.postStory(token, description, imgStory).onStart {
+        storyRepository.postStory(token, description, imgStory, lat, lon).onStart {
             emit(UiState.loading())
         }.collect { response ->
             emit(UiState.hideLoading())

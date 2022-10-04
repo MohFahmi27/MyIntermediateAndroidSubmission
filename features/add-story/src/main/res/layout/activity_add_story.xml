@@ -105,13 +105,53 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/tv_add_location_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_your_location"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            android:labelFor="@id/btn_locate_me"
+            android:layout_marginTop="@dimen/_18sdp"
+            app:layout_constraintStart_toEndOf="@id/gd_start"
+            app:layout_constraintTop_toBottomOf="@id/til_description"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_locate_me"
+            style="@style/primaryButtonStyle"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            app:icon="@drawable/ic_my_location"
+            app:iconGravity="textStart"
+            android:text="@string/locate_me"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_location_title"
+            app:layout_constraintStart_toStartOf="@id/gd_start"
+            app:layout_constraintEnd_toEndOf="@id/gd_center"/>
+
+        <TextView
+            android:id="@+id/tv_lat_lon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_10ssp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/secondaryLightColor"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_locate_me"
+            app:layout_constraintEnd_toStartOf="@+id/gd_end"
+            app:layout_constraintStart_toStartOf="@+id/gd_center"
+            app:layout_constraintTop_toTopOf="@+id/btn_locate_me"
+            tools:text="@tools:sample/lorem/random" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_upload"
             style="@style/primaryButtonStyle"
             android:text="@string/upload"
             android:layout_marginVertical="@dimen/_20sdp"
             app:layout_constraintVertical_bias="0.2"
-            app:layout_constraintTop_toBottomOf="@id/til_description"
+            app:layout_constraintTop_toBottomOf="@id/btn_locate_me"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/gd_start"
             app:layout_constraintEnd_toEndOf="@id/gd_end"/>

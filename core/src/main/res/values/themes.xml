@@ -35,7 +35,6 @@
     <style name="PrimaryTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/_50sdp</item>
-        <item name="android:layout_marginTop">@dimen/_4sdp</item>
         <item name="boxBackgroundColor">@color/primaryColor</item>
         <item name="boxCornerRadiusBottomEnd">0dp</item>
         <item name="boxCornerRadiusBottomStart">0dp</item>

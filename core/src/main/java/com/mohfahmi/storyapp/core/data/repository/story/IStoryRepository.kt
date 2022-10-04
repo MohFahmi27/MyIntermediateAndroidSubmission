@@ -18,6 +18,8 @@ interface IStoryRepository {
     fun postStory(
         token: String,
         description: String,
-        imgStory: File
+        imgStory: File,
+        lat: Double? = null,
+        lon: Double? = null,
     ): Flow<ApiResponse<UploadStory>>
 }

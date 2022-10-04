@@ -21,13 +21,30 @@ class StoryRepository(private val remoteDataSource: RemoteDataSource) : IStoryRe
     override fun postStory(
         token: String,
         description: String,
-        imgStory: File
-    ): Flow<ApiResponse<UploadStory>> = remoteDataSource.uploadStory(
-        "Bearer $token",
-        MultipartBody.Builder()
-            .setType(MultipartBody.FORM)
-            .addFormDataPart("description", description)
-            .addPart(imgStory.toMultipartBody("photo"))
-            .build()
-    )
+        imgStory: File,
+        lat: Double?,
+        lon: Double?,
+    ): Flow<ApiResponse<UploadStory>> {
+        return if (lat == null) {
+            remoteDataSource.uploadStory(
+                "Bearer $token",
+                MultipartBody.Builder()
+                    .setType(MultipartBody.FORM)
+                    .addFormDataPart("description", description)
+                    .addPart(imgStory.toMultipartBody("photo"))
+                    .build()
+            )
+        } else {
+            remoteDataSource.uploadStory(
+                "Bearer $token",
+                MultipartBody.Builder()
+                    .setType(MultipartBody.FORM)
+                    .addFormDataPart("description", description)
+                    .addPart(imgStory.toMultipartBody("photo"))
+                    .addFormDataPart("lat", lat.toString())
+                    .addFormDataPart("lon", lon.toString())
+                    .build()
+            )
+        }
+    }
 }

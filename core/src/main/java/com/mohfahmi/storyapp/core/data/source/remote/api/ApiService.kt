@@ -25,7 +25,7 @@ interface ApiService {
     @POST("stories")
     suspend fun uploadStory(
         @Header("Authorization") token: String,
-        @Body requestBody: RequestBody,
+        @Body requestBody: RequestBody
     ): Response<PostStoryResponse>
 
     @GET("stories")

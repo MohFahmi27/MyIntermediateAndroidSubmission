@@ -61,7 +61,6 @@ class HomeActivity : AppCompatActivity() {
         with(binding) {
             when (response.status) {
                 Status.LOADING -> {
-                    srlStory.visible()
                     rvStory.veil()
                     llLayoutError.invisible()
                     srlStory.isRefreshing = false
@@ -92,7 +91,6 @@ class HomeActivity : AppCompatActivity() {
                     rvStory.setAdapter(adapter)
                 }
                 Status.ERROR -> {
-                    srlStory.invisible()
                     llLayoutError.visible()
                     tvErrorMessage.text = response.message
                     btnTryAgain.setOnClickListener {

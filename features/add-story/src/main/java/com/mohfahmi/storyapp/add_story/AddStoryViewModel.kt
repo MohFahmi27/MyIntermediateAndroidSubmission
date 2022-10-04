@@ -30,9 +30,11 @@ class AddStoryViewModel(
     fun uploadStory(
         token: String,
         description: String,
-        imgStory: File
+        imgStory: File,
+        lat: Double? = null,
+        lon: Double? = null
     ): LiveData<UiState<UploadStory>> {
-        return uploadStoryUseCase(token, description, imgStory).asLiveData()
+        return uploadStoryUseCase(token, description, imgStory, lat, lon).asLiveData()
     }
 
 }

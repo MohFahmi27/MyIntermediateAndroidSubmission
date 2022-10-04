@@ -25,7 +25,11 @@
     <string name="upload">Upload</string>
     <string name="permission_camera_request">This application cannot fully work without Camera Permission.</string>
     <string name="permission_storage_request">This application cannot fully work without Storage Permission.</string>
-    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_location_request">You can\'t input your location without Location Permission</string>
+    <string name="permission_granted">Permission Granted, Please Try Again!</string>
     <string name="upload_story_success">Upload Story Success</string>
     <string name="map_story">Map Story</string>
+    <string name="locate_me">Locate Me</string>
+    <string name="add_your_location">Add Your Location (<i>optional</i>)</string>
+    <string name="lat_lon" translatable="false">(%1$.0f, %2$.0f)</string>
 </resources>
