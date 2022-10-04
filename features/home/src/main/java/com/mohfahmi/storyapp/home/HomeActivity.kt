@@ -73,20 +73,20 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun getAllStories() {
+        binding.rvStory.setAdapter(adapter.withLoadStateFooter(footer = LoadingStateAdapter {
+            adapter.retry()
+        }))
         viewModel.tokenKey.observe(this) { token ->
             viewModel.getAllStories(token).observe(this, ::manageAllStoriesResponse)
         }
     }
 
     private fun manageAllStoriesResponse(response: PagingData<Story>) {
-        binding.rvStory.setAdapter(adapter.withLoadStateFooter(footer = LoadingStateAdapter {
-            adapter.retry()
-        }))
         adapter.submitData(lifecycle, response)
 
         adapter.addLoadStateListener { loadState ->
             with(binding) {
-                if (loadState.refresh is LoadState.Loading) {
+                if (loadState.mediator?.refresh is LoadState.Loading) {
                     rvStory.visible()
                     rvStory.veil()
                     llLayoutError.invisible()
@@ -95,12 +95,12 @@ class HomeActivity : AppCompatActivity() {
                     rvStory.unVeil()
                     srlStory.isRefreshing = false
                     val error = when {
-                        loadState.prepend is LoadState.Error ->
-                            loadState.prepend as LoadState.Error
-                        loadState.append is LoadState.Error ->
-                            loadState.append as LoadState.Error
-                        loadState.refresh is LoadState.Error ->
-                            loadState.refresh as LoadState.Error
+                        loadState.mediator?.prepend is LoadState.Error ->
+                            loadState.mediator?.prepend as LoadState.Error
+                        loadState.mediator?.append is LoadState.Error ->
+                            loadState.mediator?.append as LoadState.Error
+                        loadState.mediator?.refresh is LoadState.Error ->
+                            loadState.mediator?.refresh as LoadState.Error
                         else -> null
                     }
                     error?.let {

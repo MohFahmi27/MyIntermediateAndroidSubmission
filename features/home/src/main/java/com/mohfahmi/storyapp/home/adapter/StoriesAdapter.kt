@@ -11,6 +11,7 @@ import coil.load
 import com.mohfahmi.storyapp.core.R.drawable.img_error_image
 import com.mohfahmi.storyapp.core.R.drawable.img_photo_loading
 import com.mohfahmi.storyapp.core.domain.models.Story
+import com.mohfahmi.storyapp.core.utils.capitalize
 import com.mohfahmi.storyapp.home.databinding.ItemsStoryBinding
 
 class StoriesAdapter(
@@ -22,9 +23,7 @@ class StoriesAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(story: Story) {
             with(binding) {
-                tvStoryName.text = story.name.replaceFirstChar {
-                    it.uppercase()
-                }
+                tvStoryName.text = story.name.capitalize()
                 tvStoryDescription.text = story.description
                 imgStory.load(story.photoUrl) {
                     error(img_error_image)

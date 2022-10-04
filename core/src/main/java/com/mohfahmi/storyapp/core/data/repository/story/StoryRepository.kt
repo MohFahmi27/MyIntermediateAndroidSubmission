@@ -1,12 +1,10 @@
 package com.mohfahmi.storyapp.core.data.repository.story
 
 import androidx.lifecycle.LiveData
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.liveData
+import androidx.paging.*
+import com.mohfahmi.storyapp.core.data.source.StoryRemoteMediator
+import com.mohfahmi.storyapp.core.data.source.local.database.StoryDatabase
 import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
-import com.mohfahmi.storyapp.core.data.source.remote.StoryPagingSource
 import com.mohfahmi.storyapp.core.data.source.remote.api.ApiService
 import com.mohfahmi.storyapp.core.domain.models.Story
 import com.mohfahmi.storyapp.core.domain.models.UploadStory
@@ -17,17 +15,20 @@ import okhttp3.MultipartBody
 import java.io.File
 
 class StoryRepository(
+    private val storyDatabase: StoryDatabase,
     private val remoteDataSource: RemoteDataSource,
     private val apiService: ApiService
 ) : IStoryRepository {
 
+    @OptIn(ExperimentalPagingApi::class)
     override fun getAllStories(token: String): LiveData<PagingData<Story>> {
         return Pager(
             config = PagingConfig(
                 pageSize = NETWORK_PAGE_SIZE
             ),
+            remoteMediator = StoryRemoteMediator(storyDatabase, apiService, "Bearer $token"),
             pagingSourceFactory = {
-                StoryPagingSource(apiService, token)
+                storyDatabase.storyDao().getAllStories()
             }
         ).liveData
     }

@@ -1,6 +1,7 @@
 package com.mohfahmi.storyapp
 
 import android.app.Application
+import com.mohfahmi.storyapp.core.data.di.databaseModule
 import com.mohfahmi.storyapp.core.data.di.networkModule
 import com.mohfahmi.storyapp.core.data.di.repositoryModule
 import com.mohfahmi.storyapp.core.domain.di.domainModule
@@ -18,6 +19,7 @@ class StoryAppApplication : Application() {
             androidContext(this@StoryAppApplication)
             modules(listOf(
                 networkModule,
+                databaseModule,
                 repositoryModule,
                 domainModule,
                 viewModelModule
