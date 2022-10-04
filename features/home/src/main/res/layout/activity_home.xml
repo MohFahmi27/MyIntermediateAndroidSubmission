@@ -77,9 +77,10 @@
 
             <TextView
                 android:id="@+id/tv_error_message"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_24sdp"
+                android:gravity="center"
                 android:textSize="@dimen/_16ssp"
                 tools:text="@string/something_went_wrong" />
 

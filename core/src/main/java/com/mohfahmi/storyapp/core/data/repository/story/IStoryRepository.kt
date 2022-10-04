@@ -1,5 +1,7 @@
 package com.mohfahmi.storyapp.core.data.repository.story
 
+import androidx.lifecycle.LiveData
+import androidx.paging.PagingData
 import com.mohfahmi.storyapp.core.domain.models.Story
 import com.mohfahmi.storyapp.core.domain.models.UploadStory
 import com.mohfahmi.storyapp.core.utils.ApiResponse
@@ -9,7 +11,7 @@ import java.io.File
 interface IStoryRepository {
     fun getAllStories(
         token: String,
-    ): Flow<ApiResponse<ArrayList<Story>>>
+    ): LiveData<PagingData<Story>>
 
     fun getAllWithStories(
         token: String,

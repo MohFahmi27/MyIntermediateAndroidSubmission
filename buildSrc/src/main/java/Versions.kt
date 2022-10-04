@@ -14,6 +14,7 @@ object Versions {
     const val NAVIGATION_COMPONENT_VERSION = "2.5.1"
     const val KOIN_VERSION = "3.1.5"
     const val CHUCKER_VERSION = "3.5.2"
+    const val ROOM_VERSION = "2.4.3"
     const val DATA_STORE_VERSION = "1.0.0"
     const val RETROFIT_VERSION = "2.9.0"
     const val MOSHI_VERSION = "1.13.0"

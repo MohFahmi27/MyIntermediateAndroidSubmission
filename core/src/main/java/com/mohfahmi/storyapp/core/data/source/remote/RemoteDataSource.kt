@@ -48,21 +48,6 @@ class RemoteDataSource(private val apiService: ApiService) {
         }
     }
 
-    fun getAllStories(token: String): Flow<ApiResponse<ArrayList<Story>>> = flow {
-        try {
-            val response = apiService.getStories(token)
-            if (response.isSuccessful) {
-                emit(ApiResponse.Success(response.body().mapToDomain()))
-            } else {
-                emit(ApiResponse.Error(response.getErrorMessage()))
-            }
-        } catch (e: HttpException) {
-            emit(ApiResponse.Error(e.localizedMessage as String))
-        } catch (e: IOException) {
-            emit(ApiResponse.Error(e.localizedMessage as String))
-        }
-    }
-
     fun uploadStory(token: String, requestBody: RequestBody):
             Flow<ApiResponse<UploadStory>> = flow {
         try {

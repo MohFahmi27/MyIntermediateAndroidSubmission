@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skydoves.androidveil.VeilLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/vl_main"
+    app:veilFrame_baseAlpha="0.6"
+    app:veilFrame_baseColor="@color/secondaryLightColor"
+    app:veilFrame_highlightAlpha="1.0"
+    app:veilFrame_highlightColor="@color/secondaryColor"
+    app:veilFrame_radius="@dimen/_8sdp"
+    app:veilFrame_shimmerEnable="true"
+    app:veilFrame_veiled="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:textSize="@dimen/_16ssp"
+            tools:text="@string/something_went_wrong" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_try_again"
+            style="@style/primaryButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:text="@string/try_again" />
+
+    </LinearLayout>
+</com.skydoves.androidveil.VeilLayout>

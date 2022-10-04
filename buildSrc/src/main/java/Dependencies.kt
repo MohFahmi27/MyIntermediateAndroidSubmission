@@ -101,4 +101,15 @@ object Dependencies {
         const val googleMaps = "com.google.android.gms:play-services-maps:18.0.2"
         const val googleMapsLocation = "com.google.android.gms:play-services-location:20.0.0"
     }
+
+    object Paging {
+        const val pagingKtx = "androidx.paging:paging-runtime-ktx:3.1.1"
+    }
+
+    object Room {
+        const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
+        const val roomKtx = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
+        const val roomPaging = "androidx.room:room-paging:2.4.3"
+    }
 }

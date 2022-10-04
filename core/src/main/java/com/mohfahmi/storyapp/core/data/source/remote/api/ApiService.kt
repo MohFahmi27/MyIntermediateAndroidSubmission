@@ -6,10 +6,7 @@ import com.mohfahmi.storyapp.core.data.source.remote.models.RegisterResponse
 import com.mohfahmi.storyapp.core.data.source.remote.models.StoriesResponse
 import okhttp3.RequestBody
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @POST("login")
@@ -30,7 +27,9 @@ interface ApiService {
 
     @GET("stories")
     suspend fun getStories(
-        @Header("Authorization") token: String
+        @Header("Authorization") token: String,
+        @Query("page") page: Int,
+        @Query("size") size: Int
     ): Response<StoriesResponse>
 
     @GET("stories?location=1")

@@ -56,5 +56,5 @@ val repositoryModule = module {
     factory { DataStoreDataSource(androidContext().AppDataStore) }
     factory { RemoteDataSource(get()) }
     single<IAuthRepository> { AuthRepository(get(), get()) }
-    single<IStoryRepository> { StoryRepository(get()) }
+    single<IStoryRepository> { StoryRepository(get(), get()) }
 }

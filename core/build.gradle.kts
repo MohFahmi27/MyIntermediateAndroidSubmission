@@ -3,6 +3,7 @@ plugins {
     id("com.android.library")
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
+    kotlin("kapt")
 }
 
 android {
@@ -58,6 +59,11 @@ dependencies {
     implementation(Dependencies.DataStore.dataStoreCore)
     implementation(Dependencies.DataStore.dataStorePreferences)
     implementation(Dependencies.DataStore.dataStorePreferenceCore)
+    implementation(Dependencies.Paging.pagingKtx)
+    implementation(Dependencies.Room.roomRuntime)
+    implementation(Dependencies.Room.roomKtx)
+    implementation(Dependencies.Room.roomPaging)
+    kapt(Dependencies.Room.roomCompiler)
     debugImplementation(Dependencies.Testing.chuckerDebug)
     releaseImplementation(Dependencies.Testing.chuckerRelease)
 }
