@@ -41,11 +41,12 @@ fun DependencyHandler.commonAndroidLibrary() {
     testImplementation(Dependencies.Testing.mockitoInline)
     testImplementation(Dependencies.Testing.coreTesting)
     testImplementation(Dependencies.Testing.coroutineTest)
+    androidTestImplementation(Dependencies.Networking.okhttp3Tls)
+    androidTestImplementation(Dependencies.Testing.coroutineTest)
     androidTestImplementation(Dependencies.Testing.testRunner)
-    androidTestImplementation(Dependencies.Testing.mockWebServer)
-    androidTestImplementation(Dependencies.Testing.okhttpTls)
     androidTestImplementation(Dependencies.Testing.espressoContrib)
     androidTestImplementation(Dependencies.Testing.espressoCore)
+    androidTestImplementation(Dependencies.Testing.espressoIntents)
 }
 
 private fun DependencyHandler.implementation(dependencyNotation: Any): Dependency? =

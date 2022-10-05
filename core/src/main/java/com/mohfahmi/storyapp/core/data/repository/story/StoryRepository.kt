@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.*
 import com.mohfahmi.storyapp.core.data.source.StoryRemoteMediator
 import com.mohfahmi.storyapp.core.data.source.local.database.StoryDatabase
-import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
+import com.mohfahmi.storyapp.core.data.source.remote.IRemoteDataSource
 import com.mohfahmi.storyapp.core.data.source.remote.api.ApiService
 import com.mohfahmi.storyapp.core.domain.models.Story
 import com.mohfahmi.storyapp.core.domain.models.UploadStory
@@ -16,7 +16,7 @@ import java.io.File
 
 class StoryRepository(
     private val storyDatabase: StoryDatabase,
-    private val remoteDataSource: RemoteDataSource,
+    private val remoteDataSource: IRemoteDataSource,
     private val apiService: ApiService
 ) : IStoryRepository {
 

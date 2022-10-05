@@ -12,7 +12,7 @@ import java.io.IOException
 const val PREFERENCE_NAME = "com.mohfahmi.storyapp.preferences"
 val Context.AppDataStore by preferencesDataStore(PREFERENCE_NAME)
 
-class DataStoreDataSource(private val dataStore: DataStore<Preferences>) {
+class DataStoreDataSource(private val dataStore: DataStore<Preferences>): IDataStoreDataSource {
     private object PreferenceKeys {
         val loginStatePreferenceKey =
             booleanPreferencesKey("com.mohfahmi.storyapp.preferences.login_state")
@@ -20,13 +20,13 @@ class DataStoreDataSource(private val dataStore: DataStore<Preferences>) {
             stringPreferencesKey("com.mohfahmi.storyapp.preferences.token_key")
     }
 
-    suspend fun setLoginState(state: Boolean) {
+    override suspend fun setLoginState(state: Boolean) {
         dataStore.edit { preferences ->
             preferences[PreferenceKeys.loginStatePreferenceKey] = state
         }
     }
 
-    fun getLoginState(): Flow<Boolean> = dataStore.data
+    override fun getLoginState(): Flow<Boolean> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 emit(emptyPreferences())
@@ -38,19 +38,19 @@ class DataStoreDataSource(private val dataStore: DataStore<Preferences>) {
             value[PreferenceKeys.loginStatePreferenceKey] ?: false
         }
 
-    suspend fun setTokenKey(token: String) {
+    override suspend fun setTokenKey(token: String) {
         dataStore.edit { preferences ->
             preferences[PreferenceKeys.tokenPreferenceKey] = token
         }
     }
 
-    suspend fun deleteTokenKey() {
+    override suspend fun deleteTokenKey() {
         dataStore.edit { preferences ->
             preferences.remove(PreferenceKeys.tokenPreferenceKey)
         }
     }
 
-    fun getTokenKey(): Flow<String> = dataStore.data
+    override fun getTokenKey(): Flow<String> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 emit(emptyPreferences())

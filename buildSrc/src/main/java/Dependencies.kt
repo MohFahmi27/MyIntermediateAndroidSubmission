@@ -81,10 +81,9 @@ object Dependencies {
         const val coroutineTest =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VERSION}"
         const val coreTesting = "androidx.arch.core:core-testing:2.1.0"
-        const val espressoIdling = "androidx.test.espresso:espresso-idling-resource:3.4.0"
-        const val espressoContrib = "com.android.support.test.espresso:espresso-contrib:3.0.2"
-        const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_VERSION}"
-        const val okhttpTls = "com.squareup.okhttp3:okhttp-tls:{${Versions.OKHTTP_VERSION}}"
+        const val espressoIdling = "androidx.test.espresso:espresso-idling-resource:3.1.0"
+        const val espressoContrib = "androidx.test.espresso:espresso-contrib:3.1.0"
+        const val espressoIntents = "androidx.test.espresso:espresso-intents:3.1.0"
     }
 
     object DataStore {
@@ -104,6 +103,8 @@ object Dependencies {
         const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
         const val okhttp3Log =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
+        const val okhttp3Tls =
+            "com.squareup.okhttp3:okhttp-tls:${Versions.OKHTTP_VERSION}"
     }
 
     object GoogleMaps {

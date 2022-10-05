@@ -18,6 +18,6 @@ object Versions {
     const val DATA_STORE_VERSION = "1.0.0"
     const val RETROFIT_VERSION = "2.9.0"
     const val MOSHI_VERSION = "1.13.0"
-    const val OKHTTP_VERSION = "4.9.3"
+    const val OKHTTP_VERSION = "4.10.0"
     const val MOCKITO_VERSION = "3.12.4"
 }
