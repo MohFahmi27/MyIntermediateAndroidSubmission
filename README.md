@@ -10,3 +10,9 @@ This is submission for android Intermediate course in <a href="https://www.dicod
 </p>
 
 ## Submission 2 Screenshot:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/50865350/194211293-2cf170f1-cdc3-4a1a-911c-f4e182932989.jpg" alt="Login" width="200"/>
+  <img src="https://user-images.githubusercontent.com/50865350/194211296-3b30fd60-f779-4abe-92c2-e31c5aca18eb.jpg" alt="Register" width="200"/>
+  <img src="https://user-images.githubusercontent.com/50865350/194211299-573c5cd6-97c8-4ee3-a593-a4583a2099e2.jpg" alt="Home Activity" width="200"/>
+</p>
+
