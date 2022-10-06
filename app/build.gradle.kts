@@ -43,6 +43,9 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        animationsDisabled = true
+    }
 }
 
 dependencies {
@@ -51,5 +54,11 @@ dependencies {
     implementation(project(":features:home"))
     implementation(project(":features:detail"))
     implementation(project(":features:add-story"))
+    implementation(project(":features:map-story"))
+    testImplementation(Dependencies.Paging.pagingKtx)
+    androidTestImplementation(Dependencies.Paging.pagingKtx)
+    androidTestImplementation(Dependencies.Paging.pagingKtx)
+    androidTestImplementation(Dependencies.Room.roomRuntime)
+    androidTestImplementation(Dependencies.Networking.retrofit2)
     commonAndroidLibrary()
 }

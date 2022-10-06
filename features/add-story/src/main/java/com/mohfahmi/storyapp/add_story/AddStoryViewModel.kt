@@ -4,15 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.mohfahmi.storyapp.core.domain.models.UploadStory
-import com.mohfahmi.storyapp.core.domain.use_cases.GetUserTokenUseCase
-import com.mohfahmi.storyapp.core.domain.use_cases.UploadStoryUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.GetUserTokenUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.story.UploadStoryUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import java.io.File
 
 class AddStoryViewModel(
-    getUserTokenUseCase: GetUserTokenUseCase,
+    private val getUserTokenUseCase: GetUserTokenUseCase,
     private val uploadStoryUseCase: UploadStoryUseCase
 ) : ViewModel() {
     var isImagePicked = MutableStateFlow(false)
@@ -25,14 +25,16 @@ class AddStoryViewModel(
         imagePicked && descriptionInput.isNotEmpty()
     }
 
-    val token: LiveData<String> = getUserTokenUseCase().asLiveData()
+    fun token(): LiveData<String> = getUserTokenUseCase().asLiveData()
 
     fun uploadStory(
         token: String,
         description: String,
-        imgStory: File
+        imgStory: File,
+        lat: Double? = null,
+        lon: Double? = null
     ): LiveData<UiState<UploadStory>> {
-        return uploadStoryUseCase(token, description, imgStory).asLiveData()
+        return uploadStoryUseCase(token, description, imgStory, lat, lon).asLiveData()
     }
 
 }

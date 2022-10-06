@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(4500)
             withContext(Dispatchers.Main) {
-                viewModel.readLoginState.observe(this@MainActivity) { state ->
+                viewModel.readLoginState().observe(this@MainActivity) { state ->
                     if (state) navigateToHome() else navigateToAuth()
                 }
             }

@@ -1,5 +1,6 @@
 package com.mohfahmi.storyapp.core.data.di
 
+import androidx.room.Room
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.mohfahmi.storyapp.core.BuildConfig
@@ -9,6 +10,9 @@ import com.mohfahmi.storyapp.core.data.repository.story.IStoryRepository
 import com.mohfahmi.storyapp.core.data.repository.story.StoryRepository
 import com.mohfahmi.storyapp.core.data.source.local.AppDataStore
 import com.mohfahmi.storyapp.core.data.source.local.DataStoreDataSource
+import com.mohfahmi.storyapp.core.data.source.local.IDataStoreDataSource
+import com.mohfahmi.storyapp.core.data.source.local.database.StoryDatabase
+import com.mohfahmi.storyapp.core.data.source.remote.IRemoteDataSource
 import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
 import com.mohfahmi.storyapp.core.data.source.remote.api.ApiService
 import com.squareup.moshi.Moshi
@@ -52,9 +56,22 @@ val networkModule = module {
     }
 }
 
+val databaseModule = module {
+    factory { get<StoryDatabase>().storyDao() }
+    factory { get<StoryDatabase>().remoteKeysDao() }
+    single {
+        Room.databaseBuilder(
+            androidContext(),
+            StoryDatabase::class.java,
+            "story_app.db"
+        )
+            .fallbackToDestructiveMigration().build()
+    }
+}
+
 val repositoryModule = module {
-    factory { DataStoreDataSource(androidContext().AppDataStore) }
-    factory { RemoteDataSource(get()) }
+    factory<IDataStoreDataSource> { DataStoreDataSource(androidContext().AppDataStore) }
+    factory<IRemoteDataSource> { RemoteDataSource(get()) }
     single<IAuthRepository> { AuthRepository(get(), get()) }
-    single<IStoryRepository> { StoryRepository(get()) }
+    single<IStoryRepository> { StoryRepository(get(), get(), get()) }
 }

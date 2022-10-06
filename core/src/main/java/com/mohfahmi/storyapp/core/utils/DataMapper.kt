@@ -26,9 +26,12 @@ fun StoriesResponse?.mapToDomain(): ArrayList<Story> {
     this?.listStory?.map { storyItem ->
         stories.add(
             Story(
+                storyItem?.id ?: "",
                 storyItem?.name ?: "",
                 storyItem?.description ?: "",
                 storyItem?.photoUrl ?: "",
+                storyItem?.lat,
+                storyItem?.lon,
             )
         )
     }

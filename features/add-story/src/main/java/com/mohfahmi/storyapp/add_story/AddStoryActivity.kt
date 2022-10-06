@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.Intent.ACTION_GET_CONTENT
 import android.graphics.BitmapFactory
+import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -15,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.mohfahmi.storyapp.add_story.databinding.ActivityAddStoryBinding
 import com.mohfahmi.storyapp.core.R.drawable.img_photo_loading
 import com.mohfahmi.storyapp.core.R.string.*
@@ -28,6 +31,7 @@ import com.vmadalin.easypermissions.dialogs.SettingsDialog
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
+import java.util.*
 
 class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
@@ -39,11 +43,15 @@ class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
     private lateinit var launcherIntentCamera: ActivityResultLauncher<Intent>
     private lateinit var launcherIntentGallery: ActivityResultLauncher<Intent>
     private lateinit var currentPhotoPath: String
+    private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var myImgStory: File? = null
+    private var lat: Double? = null
+    private var lng: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         initCameraIntent()
         initGalleryIntent()
         initViews()
@@ -63,6 +71,13 @@ class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
                     startGallery()
                 } else {
                     requestStoragePermission()
+                }
+            }
+            btnLocateMe.setOnClickListener {
+                if (hasLocationPermission()) {
+                    getLocation()
+                } else {
+                    requestLocationPermission()
                 }
             }
             edAddDescription.doAfterTextChanged {
@@ -197,11 +212,47 @@ class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
     private fun hasStoragePermission() =
         EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)
 
+    private fun requestLocationPermission() {
+        EasyPermissions.requestPermissions(
+            this,
+            getString(permission_location_request),
+            REQUEST_LOCATION_PERMISSION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+        )
+    }
+
+    private fun hasLocationPermission() =
+        EasyPermissions.hasPermissions(
+            this,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+
     private fun uploadStory(description: String, img: File) {
-        viewModel.token.observe(this) {
-            viewModel.uploadStory(it, description, img).observe(
+        viewModel.token().observe(this) {
+            viewModel.uploadStory(it, description, img, lat, lng).observe(
                 this,
                 ::manageUploadStoryResponse
+            )
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun getLocation() {
+        fusedLocationProviderClient.lastLocation.addOnSuccessListener { location ->
+            location?.let {
+                lat = location.latitude
+                lng = location.longitude
+                binding.tvLatLon.text = getAddress(lat as Double, lng as Double)
+            }
+        }.addOnFailureListener {
+            FancyToast.makeText(
+                this,
+                it.message,
+                FancyToast.LENGTH_SHORT,
+                FancyToast.ERROR,
+                false
             )
         }
     }
@@ -232,8 +283,15 @@ class AddStoryActivity : AppCompatActivity(), EasyPermissions.PermissionCallback
         }
     }
 
+    private fun getAddress(latitude: Double, longitude: Double): String {
+        val myGeoCoder = Geocoder(this, Locale.getDefault())
+        val getAddress = myGeoCoder.getFromLocation(latitude, longitude, 1)
+        return getAddress[0].getAddressLine(0)
+    }
+
     companion object {
         private const val REQUEST_CAMERA_PERMISSION = 1
         private const val REQUEST_STORAGE_PERMISSION = 2
+        private const val REQUEST_LOCATION_PERMISSION = 3
     }
 }

@@ -40,5 +40,6 @@ dependencies {
     implementation(Dependencies.UiLibs.androidVeil)
     implementation(Dependencies.UiLibs.swipeRefresh)
     implementation(Dependencies.UiLibs.expandableFab)
+    implementation(Dependencies.Paging.pagingKtx)
     commonAndroidLibrary()
 }

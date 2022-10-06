@@ -76,6 +76,14 @@ object Dependencies {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.CHUCKER_VERSION}"
         const val testRunner = "androidx.test.ext:junit:1.1.3"
         const val espressoCore = "androidx.test.espresso:espresso-core:3.4.0"
+        const val mockitoCore = "org.mockito:mockito-core:${Versions.MOCKITO_VERSION}"
+        const val mockitoInline = "org.mockito:mockito-inline:${Versions.MOCKITO_VERSION}"
+        const val coroutineTest =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_VERSION}"
+        const val coreTesting = "androidx.arch.core:core-testing:2.1.0"
+        const val espressoIdling = "androidx.test.espresso:espresso-idling-resource:3.1.0"
+        const val espressoContrib = "androidx.test.espresso:espresso-contrib:3.1.0"
+        const val espressoIntents = "androidx.test.espresso:espresso-intents:3.1.0"
     }
 
     object DataStore {
@@ -95,5 +103,23 @@ object Dependencies {
         const val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP_VERSION}"
         const val okhttp3Log =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_VERSION}"
+        const val okhttp3Tls =
+            "com.squareup.okhttp3:okhttp-tls:${Versions.OKHTTP_VERSION}"
+    }
+
+    object GoogleMaps {
+        const val googleMaps = "com.google.android.gms:play-services-maps:18.0.2"
+        const val googleMapsLocation = "com.google.android.gms:play-services-location:20.0.0"
+    }
+
+    object Paging {
+        const val pagingKtx = "androidx.paging:paging-runtime-ktx:3.1.1"
+    }
+
+    object Room {
+        const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
+        const val roomKtx = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
+        const val roomPaging = "androidx.room:room-paging:${Versions.ROOM_VERSION}"
     }
 }

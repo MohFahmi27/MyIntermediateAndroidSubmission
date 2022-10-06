@@ -24,7 +24,11 @@
     <string name="description">Deskripsi</string>
     <string name="upload">Unggah</string>
     <string name="permission_camera_request">Aplikasi Tidak akan penuh beroperasi ketika permission kamera tidak di berikan.</string>
-    <string name="permission_granted">Izin Diberikan</string>
+    <string name="permission_granted">Izin Diberikan, Silahkan Coba Lagi!</string>
     <string name="permission_storage_request">Aplikasi Tidak akan penuh beroperasi ketika permission penyimpanan tidak di berikan.</string>
     <string name="upload_story_success">Unggah Cerita Berhasil</string>
+    <string name="map_story">Peta Cerita</string>
+    <string name="add_your_location">Tambahkan Lokasi Anda</string>
+    <string name="permission_location_request">Aplikasi Tidak akan penuh beroperasi ketika permission lokasi tidak di berikan.</string>
+    <string name="locate_me">Temukan Saya</string>
 </resources>

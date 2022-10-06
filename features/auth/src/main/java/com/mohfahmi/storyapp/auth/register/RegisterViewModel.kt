@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.mohfahmi.storyapp.core.domain.models.Register
-import com.mohfahmi.storyapp.core.domain.use_cases.RegisterUseCase
+import com.mohfahmi.storyapp.core.domain.use_cases.auth.RegisterUseCase
 import com.mohfahmi.storyapp.core.utils.UiState
 
 class RegisterViewModel(private val registerUseCase: RegisterUseCase): ViewModel() {

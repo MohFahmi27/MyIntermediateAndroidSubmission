@@ -32,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title_main" />
 
     <FrameLayout
+        android:id="@+id/fr_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,9 +77,10 @@
 
             <TextView
                 android:id="@+id/tv_error_message"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_24sdp"
+                android:gravity="center"
                 android:textSize="@dimen/_16ssp"
                 tools:text="@string/something_went_wrong" />
 
@@ -121,6 +123,14 @@
             app:fab_icon="@drawable/ic_add"
             app:fab_orientation="portrait"
             app:label_text="@string/create_story" />
+
+        <com.nambimobile.widgets.efab.FabOption
+            android:id="@+id/efb_story_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_icon="@drawable/ic_map"
+            app:fab_orientation="portrait"
+            app:label_text="@string/map_story" />
 
         <com.nambimobile.widgets.efab.FabOption
             android:id="@+id/efb_change_language"

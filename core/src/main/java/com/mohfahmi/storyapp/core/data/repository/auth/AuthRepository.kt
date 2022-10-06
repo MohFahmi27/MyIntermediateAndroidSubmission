@@ -1,15 +1,15 @@
 package com.mohfahmi.storyapp.core.data.repository.auth
 
-import com.mohfahmi.storyapp.core.data.source.local.DataStoreDataSource
-import com.mohfahmi.storyapp.core.data.source.remote.RemoteDataSource
+import com.mohfahmi.storyapp.core.data.source.local.IDataStoreDataSource
+import com.mohfahmi.storyapp.core.data.source.remote.IRemoteDataSource
 import com.mohfahmi.storyapp.core.domain.models.Login
 import com.mohfahmi.storyapp.core.domain.models.Register
 import com.mohfahmi.storyapp.core.utils.ApiResponse
 import kotlinx.coroutines.flow.Flow
 
 class AuthRepository(
-    private val dataStore: DataStoreDataSource,
-    private val remoteDataSource: RemoteDataSource,
+    private val dataStore: IDataStoreDataSource,
+    private val remoteDataSource: IRemoteDataSource,
 ) : IAuthRepository {
     override suspend fun setLoginState(state: Boolean) = dataStore.setLoginState(state)
 
