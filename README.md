@@ -1,6 +1,6 @@
 # MyIntermediateAndroidSubmission
 
-<img src="https://github.com/MohFahmi27/MyIntermediateAndroidSubmission/workflows/release.yml/badge.svg" />
+[![Build and Release](https://github.com/MohFahmi27/MyIntermediateAndroidSubmission/actions/workflows/release.yml/badge.svg?branch=master)](https://github.com/MohFahmi27/MyIntermediateAndroidSubmission/actions/workflows/release.yml)
 
 This is submission for android Intermediate course in <a href="https://www.dicoding.com/academies/352">dicoding.com</a>, please use this repository for referenced only, every plagiarism get automated detected.
 
